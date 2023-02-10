@@ -3,7 +3,8 @@ This repository contains the code used to prepare the data in:
 # The LUMIERE Dataset: Longitudinal Glioblastoma MRI with Expert RANO Evaluation
 
 Please cite the following publication when using this dataset:
-[CITATION]
+
+> Suter, Y., Knecht, U., Valenzuela, W., Notter, M., Hewer, E., Schucht, P., Wiest, R. and Reyes, M., 2022. The LUMIERE dataset: Longitudinal Glioblastoma MRI with expert RANO evaluation. Scientific data, 9(1), p.768. [https://doi.org/10.1038/s41597-022-01881-7](https://www.nature.com/articles/s41597-022-01881-7)
 
 ## Overview
 
