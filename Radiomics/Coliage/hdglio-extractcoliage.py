@@ -7,7 +7,8 @@ from tqdm import tqdm
 
 rootdir = "./LUMIERE/Imaging"
 
-filelist = ["CT1_r2s_bet_reg.nii.gz", "T1_r2s_bet_reg.nii.gz", "T2_r2s_bet_reg.nii.gz", "FLAIR_r2s_bet_reg.nii.gz"]
+filelist = ["CT1_bet_reg_resampled.nii.gz", "T1_bet_reg_resampled.nii.gz",
+            "T2_bet_reg_resampled.nii.gz", "FLAIR_bet_reg_resampled.nii.gz"]
 filenames = ["T1c", "T1", "T2", "FLAIR"]
 segmentation = "segmentation.nii.gz"
 
@@ -32,18 +33,18 @@ for patient in tqdm(patientlist):
         for idx, f in enumerate(filelist):
             currimgpath = os.path.join(tpdir, f)
 
-            primaryname = "collage_" + filenames[idx] + "_primary.nii.gz"
-            secondaryname = "collage_" + filenames[idx] + "_secondary.nii.gz"
+            primaryname = "collage_hdglio_" + filenames[idx] + "_primary.nii.gz"
+            secondaryname = "collage_hdglio" + filenames[idx] + "_secondary.nii.gz"
 
-            if os.path.isfile(os.path.join(tpdir, secondaryname)
-                              ):
+            # skip if it already exists
+            if os.path.isfile(os.path.join(tpdir, secondaryname)):
                 continue
 
             if os.path.isfile(currimgpath) and os.path.isfile(currsegpath):
                 img = sitk.ReadImage(currimgpath)
 
                 try:
-                    collage = collageradiomicscustom.Collage(
+                    collage = collageradiomics.Collage(
                         sitk.GetArrayFromImage(img),
                         segarr,
                         svd_radius=5,
@@ -53,8 +54,7 @@ for patient in tqdm(patientlist):
 
                     full_images = collage.execute()
 
-
-                    # split dominant and non-dominant angles to separate images?
+                    # split dominant and non-dominant angles to separate images
                     feat_primary = full_images[:, :, :, :, 0]
                     feat_secondary = full_images[:, :, :, :, 1]
 
