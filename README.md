@@ -6,14 +6,14 @@ Please cite the following publication when using this dataset:
 
 > Suter, Y., Knecht, U., Valenzuela, W., Notter, M., Hewer, E., Schucht, P., Wiest, R. and Reyes, M., 2022. The LUMIERE dataset: Longitudinal Glioblastoma MRI with expert RANO evaluation. Scientific data, 9(1), p.768. [https://doi.org/10.1038/s41597-022-01881-7](https://www.nature.com/articles/s41597-022-01881-7)
 
-The dataset can be downloaded from [Figshare](https://figshare.com/s/f3f5429e9e9275ad279d). Please note that the data is available for non-commercial use.
+The dataset can be downloaded from [Figshare](https://springernature.figshare.com/collections/The_LUMIERE_Dataset_Longitudinal_Glioblastoma_MRI_with_Expert_RANO_Evaluation/5904905/1). Please note that the data is available for non-commercial use.
 ## Overview
 
 This repository contains technical details and code so other researchers can reproduce and adapt to their specific research questions.
 
 ## Timepoint discretization
 
-To add ambiguity for a stronger anonymization but to retain the necessary time resolution, all timing information is provided relative to the first (pre-operative) MRI study date in weeks. The week was calculated by a floor division by 7 starting with the time span in days.
+To add ambiguity for stronger anonymization but to retain the necessary time resolution, all timing information is provided relative to the first (pre-operative) MRI study date in weeks. The week was calculated by a floor division by 7 starting with the time span in days.
 
 ## Automated segmentation
 
@@ -31,7 +31,7 @@ This project was funded by Swiss Cancer Research (Krebsliga Schweiz), grant KFS-
 
 
 
-The dataset was curated with great care. Should you still find an error or inconsistency, please do not hesitate to contact us.
+The dataset was curated with great care. Please do not hesitate to contact us if you still find an error or inconsistency.
 
 ## References
 
